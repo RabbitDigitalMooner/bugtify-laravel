@@ -1,0 +1,46 @@
+{
+    "name": "rabbit-digital/bugtify-laravel",
+    "description": "Error monitoring, reporting and bug notifier for Laravel",
+    "keywords": [
+        "laravel",
+        "log",
+        "error",
+        "discord"
+    ],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Rabbit Digital",
+            "email": "digital@rabbit.co.th"
+        }
+    ],
+    "homepage": "https://rabbit-digital.bssholding.com",
+    "require": {
+        "php": ">=5.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+          "RabbitDigital\\Bugtify\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "RabbitDigital\\Bugtify\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RabbitDigital\\Bugtify\\BugtifyServiceProvider"
+            ],
+            "aliases": {
+                "Bugtify": "RabbitDigital\\Bugtify\\Facades\\Bugtify"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
