@@ -112,7 +112,6 @@ class Bugtify
             'line'        => $exception->getLine(),
             'file'        => $exception->getFile(),
             'server'      => array_filter([
-                'user_agent'      => $_SERVER['HTTP_USER_AGENT'],
                 'protocol'        => $request->server('SERVER_PROTOCOL'),
                 'software'        => $request->server('SERVER_SOFTWARE'),
                 'php_version'     => PHP_VERSION,
