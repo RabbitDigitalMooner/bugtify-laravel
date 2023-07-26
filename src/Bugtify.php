@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 
 class Bugtify
 {
-    private string $webhookUrl;
+    private $webhookUrl;
 
     public function __construct(array $config)
     {
