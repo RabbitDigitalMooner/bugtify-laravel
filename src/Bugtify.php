@@ -10,8 +10,6 @@ use Illuminate\Support\Str;
 
 class Bugtify
 {
-    public const MAX_LENGTH_TITLE=100;
-
     private $webhookUrl;
 
     public function __construct(array $config)
@@ -90,12 +88,12 @@ class Bugtify
 
     private function getTitle(string $title): string
     {
-        return Str::limit($title, self::MAX_LENGTH_TITLE);
+        return Str::limit($title, config('bugtify.limit_title'));
     }
 
     private function getDescription(string $description): string
     {
-        return Str::limit($description, config('bugtify.lines_count'));
+        return Str::limit($description, config('bugtify.limit_description'));
     }
 
     private function getExceptionData($exception): array
