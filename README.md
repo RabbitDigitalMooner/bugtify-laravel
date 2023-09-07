@@ -32,7 +32,12 @@ php artisan vendor:publish --provider="RabbitDigital\Bugtify\BugtifyServiceProvi
 
 Configure your Discord Webhook URL in your .env file:
 ```dotenv
-BUGTIFY_DISCORD_WEBHOOK=your-discord-webhok-here
+BUGTIFY_DISCORD_WEBHOOK=your-discord-webhook-here
+```
+
+If you need to avoid to send notification with the same error can configure with option below
+```dotenv
+BUGTIFY_LIMIT_ENABLED=true
 ```
 
 ## Installation on Lumen
