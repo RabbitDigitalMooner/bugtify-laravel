@@ -5,6 +5,7 @@ namespace RabbitDigital\Bugtify;
 use GuzzleHttp\Exception\GuzzleException;
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Logger;
+use Monolog\LogRecord;
 
 class BugtifyLogger extends AbstractProcessingHandler
 {
@@ -20,7 +21,7 @@ class BugtifyLogger extends AbstractProcessingHandler
     /**
      * @throws GuzzleException
      */
-    protected function write(array $record): void
+    protected function write(array|LogRecord $record): void
     {
         if (isset($record['context']['exception'])
             && $record['context']['exception'] instanceof \Throwable
